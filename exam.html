@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>lrregular verb</title>
+    <script src="lrregular_verb.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="top_title" >
+      불규칙 동사
+    </div>
+    <div class="middle_content" >
+      빈칸을 채워주세요
+      <input type="text" id="txt_in" class="input_text" value="" placeholder="동사원형">
+      <br>
+      <input type="text" id="txt_ps" class="input_text" value="" placeholder="과거">
+      <br>
+      <input type="text" id="txt_pp" class="input_text" value="" placeholder="PP"
+        onkeydown="
+          if(event.keyCode == 13)
+          {
+            txt_ps.focus();
+            f_exam_next(txt_in, txt_ps, txt_pp);
+          }">
+      <br>
+
+      <input type="button" name="bt_next" value="Next" class="input_button"
+      onclick="
+        f_exam_next(txt_in, txt_ps, txt_pp);
+      ">
+    </div>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+  var txt_in = document.getElementById('txt_in')
+  var txt_ps = document.getElementById('txt_ps')
+  var txt_pp = document.getElementById('txt_pp')
+
+  f_start_exam(txt_in, txt_ps, txt_pp);
+</script>
